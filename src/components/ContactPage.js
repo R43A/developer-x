@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import logo from "../images/Frame 1.png";
 import background from "../images/Dark Desktop.jpg";
 import { Link } from "react-router-dom";
@@ -8,101 +8,6 @@ import linkedin from "../images/linkedin.png";
 import raza from "../images/Raza.jpg";
 
 function HomePage(props) {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [successMessage, setSuccessMessage] = useState(false);
-
-  useEffect(() => {
-    let timer;
-    if (successMessage) {
-      timer = setTimeout(() => {
-        setSuccessMessage(false);
-      }, 3000); // Display success message for 3 seconds
-    }
-    return () => clearTimeout(timer);
-  }, [successMessage]);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Check if name field is empty
-    if (formData.name.trim() === "") {
-      // Update state to indicate error
-      setFormData({
-        ...formData,
-        nameError: true, // Set nameError to true to indicate error
-      });
-      return; // Exit function if name is empty
-    }
-
-    // Check if email field is empty or does not contain "@"
-    if (formData.email.trim() === "") {
-      // Update state to indicate error for email field
-      setFormData({
-        ...formData,
-        emailError: true,
-      });
-      return; // Exit function if email is empty or invalid
-    }
-
-    // Check if message field is empty
-    if (formData.message.trim() === "") {
-      // Update state to indicate error for message field
-      setFormData({
-        ...formData,
-        messageError: true,
-      });
-      return; // Exit function if message is empty
-    }
-
-    const url = "https://mail-sender-api1.p.rapidapi.com/";
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
-        "X-RapidAPI-Host": "mail-sender-api1.p.rapidapi.com",
-      },
-      body: JSON.stringify({
-        sendto: "contact.razx@gmail.com",
-        name: formData.name,
-        replyTo: formData.email,
-        ishtml: "false",
-        title: "Message from Contact Form",
-        body: formData.message,
-      }),
-    };
-
-    try {
-      const response = await fetch(url, options);
-      const result = await response.text();
-      console.log(result); // Check API response
-
-      // Reset the form fields
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-        nameError: false, // Reset nameError to false
-        emailError: false, // Reset emailError to false
-        messageError: false, // Reset messageError to false
-      });
-      // Show success message
-      setSuccessMessage(true);
-    } catch (error) {
-      console.error("Error sending email:", error);
-      // Display error message or handle error as needed
-    }
-  };
-
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-transparent">
@@ -143,21 +48,17 @@ function HomePage(props) {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-8">
-            <div className="parent-cnt-pg">
-              <h1 className="h2 abt-pg-txt text-white">Hey there!</h1>
-              <p className="h6 text-white">Leave your message here!</p>
-              {successMessage && (
-                <p className="success-message">Message sent successfully!</p>
-              )}
-              <form onSubmit={handleSubmit}>
+            <div className="parent-text-over-image">
+              <h1 className="h2 abt-pg-txt text-white">
+                Hey there!
+                <p className="h6">Leave your message here</p>
+              </h1>
+              <form>
                 <div>
                   <input
                     type="text"
                     id="name"
-                    className={"cnt-frm"}
-                    value={formData.name}
-                    onChange={handleChange}
-                    name="name"
+                    className="cnt-frm"
                     placeholder="Name"
                   />
                 </div>
@@ -165,9 +66,7 @@ function HomePage(props) {
                   <input
                     type="email"
                     id="email"
-                    className={"cnt-frm"}
-                    value={formData.email}
-                    onChange={handleChange}
+                    className="cnt-frm"
                     name="email"
                     placeholder="Email"
                   />
@@ -175,9 +74,7 @@ function HomePage(props) {
                 <div>
                   <textarea
                     id="message"
-                    className={"cnt-frm"}
-                    value={formData.message}
-                    onChange={handleChange}
+                    className="cnt-frm"
                     name="message"
                     placeholder="Message"
                     rows={6} // Set number of rows
