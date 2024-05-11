@@ -80,13 +80,23 @@ a.nav-link:hover::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 79vh;
+  height: 84vh;
   width: 100%;
+}
+
+.row {
+  margin: 54px 0;
+}
+
+@media (max-width: 720px) {
+  .row {
+    margin: 0;
+  }
 }
 
 .parent-text-over-image {
   /* padding: 0px 15px 0px 9px; */
-  margin: 30px 0;
+  margin: 19px 0;
 }
 
 .gradient-text {
@@ -97,14 +107,13 @@ a.nav-link:hover::after {
 
 p.text-md {
   color: #999999;
-  font-size: medium;
   font-weight: 400;
+  font-size: small;
 }
 
 @media (max-width: 720px) {
   p.text-md {
     color: #999999;
-    font-size: medium;
     font-weight: 400;
     font-size: small;
   }
@@ -200,7 +209,7 @@ h4.text-md {
 
 .col-md-4 {
   border-left: 2px solid #adadad;
-  height: 32vh;
+  height: 46vh;
   padding: 0 35px;
 }
 
@@ -225,5 +234,15 @@ img.lnk-log {
 @media (max-width: 720px) {
   .social-links {
     margin-top: 0px;
+  }
+}
+
+p.text-small {
+  font-size: small;
+}
+
+@media (max-width: 720px) {
+  p.text-small {
+    font-size: x-small;
   }
 }

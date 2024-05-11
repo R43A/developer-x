@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "../images/Frame 1.png";
-import background from "../images/Light Desktop.jpg";
+import background from "../images/Mid Desktop.jpg";
 import { Link } from "react-router-dom";
 import instagram from "../images/instagram.png";
 import github from "../images/github.png";
 import linkedin from "../images/linkedin.png";
+// import cv from "../images/Resume.jpg";
 
 function HomePage(props) {
   return (
@@ -23,7 +24,7 @@ function HomePage(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className="nav-link" to="/">
                   About
                 </Link>
               </li>
@@ -48,35 +49,39 @@ function HomePage(props) {
         <div className="row">
           <div className="col-md-8">
             <div className="parent-text-over-image">
-              <h1 className="display-3 text-md-left gradient-text">
-                Frontend Developer
-              </h1>
-              <p className="parent-para text-md">
-                Passionate fresher Frontend Developer with a keen eye for design
-                and a drive to create engaging user experiences. Eager to
-                contribute innovative solutions and learn from experienced peers
-                in the field.
+              <h1 className="Parent-txt text-white">About me</h1>
+              <p className="parent-para text-md text-small">
+                Greetings! My name is Tauseef Raza, and I am stepping into the
+                world of frontend development with an insatiable curiosity and a
+                drive to learn. While my professional journey in this field is
+                just beginning, my enthusiasm for crafting captivating user
+                experiences knows no bounds. <br /> <br />
+                From the moment I stumbled upon the magic of web development, I
+                was captivated by its blend of creativity and technicality.
+                Despite lacking formal experience, I've spent countless hours
+                immersing myself in tutorials, courses, and coding challenges,
+                eager to absorb every nugget of knowledge like a sponge. <br />I
+                firmly believe that great frontend development isn't just about
+                lines of code; it's about empathy, understanding, and the
+                ability to anticipate and meet the needs of users.
               </p>
               <div className="parent-btn-lnk">
-                <a href="/" className="maj-btn">
-                  Download CV
-                </a>
-                <Link to="/about" className="maj-lnk">
-                  Learn More
+                <Link to="/" className="maj-lnk">
+                  Browse Projects
                 </Link>
               </div>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="parent-text-over-image">
-              <h4 className="text-md">My Projects</h4>
+            <div className="parent-text-over-image abt-pg">
+              <h4 className="text-md">Here's My CV</h4>
               <p className="parent-para text-md">
-                Crafting dynamic frontend projects with HTML, CSS, and
-                JavaScript for engaging user experiences, always seeking new
-                challenges to innovate and grow.
+                Welcome to my portfolio! Explore my professional journey and
+                expertise by downloading my CV. Let's connect and explore
+                opportunities together!
               </p>
               <Link to="/" className="maj-lnk">
-                Browse Projects
+                Download CV
               </Link>
             </div>
             <div className="social-links">
