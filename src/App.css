@@ -90,7 +90,7 @@ a.nav-link:hover::after {
 
 @media (max-width: 720px) {
   .row {
-    margin: -13px 0;
+    margin: 14px 0;
   }
 }
 
