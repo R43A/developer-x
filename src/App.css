@@ -80,7 +80,7 @@ a.nav-link:hover::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 80vh;
+  height: 82vh;
   width: 100%;
 }
 
