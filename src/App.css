@@ -85,7 +85,7 @@ a.nav-link:hover::after {
 }
 
 .row {
-  margin: 54px 0;
+  margin: 34px 0;
 }
 
 @media (max-width: 720px) {
