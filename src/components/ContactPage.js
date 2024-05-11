@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../images/Frame 1.png";
 import background from "../images/Dark Desktop.jpg";
 import { Link } from "react-router-dom";
@@ -8,6 +8,112 @@ import linkedin from "../images/linkedin.png";
 import raza from "../images/Raza.jpg";
 
 function HomePage(props) {
+  const [isNameFilled, setIsNameFilled] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isMessageFilled, setIsMessageFilled] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
+  const [message, setMessage] = useState("");
+
+  // Function to handle name input change
+  const handleNameChange = (event) => {
+    const { value } = event.target;
+    // Check if name input value is not empty
+    if (value.trim() !== "") {
+      setIsNameFilled(true); // Update state
+    } else {
+      setIsNameFilled(false);
+    }
+  };
+
+  // Function to handle email input change
+  const handleEmailChange = (event) => {
+    const { value } = event.target;
+    // Email validation regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Check if email is empty or not matching the regular expression
+    if (value.trim() === "" || !emailRegex.test(value)) {
+      setIsEmailValid(false); // Update state
+    } else {
+      setIsEmailValid(true);
+    }
+  };
+
+  // Function to handle message input change
+  const handleMessageChange = (event) => {
+    const { value } = event.target;
+    // Check if message input value is not empty
+    if (value.trim() !== "") {
+      setIsMessageFilled(true); // Update state
+    } else {
+      setIsMessageFilled(false);
+    }
+
+    // Update message state with input value
+    setMessage(value);
+  };
+
+  // Function to handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent default form submission
+    // Check if name, email, and message fields are filled and email is valid
+    if (isNameFilled && isEmailValid && isMessageFilled) {
+      // Mail sender API endpoint
+      const url = "https://mail-sender-api1.p.rapidapi.com/";
+      // Mail sender API request options
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-RapidAPI-Key": process.env.REACT_APP_API,
+          "X-RapidAPI-Host": "mail-sender-api1.p.rapidapi.com",
+        },
+        body: JSON.stringify({
+          sendto: "Contact.razx@gmail.com",
+          name: "Query from developer-X",
+          replyTo: "Your Email address where users can send their reply",
+          ishtml: false,
+          title: "Enquiry",
+          body: message,
+        }),
+      };
+
+      try {
+        const response = await fetch(url, options); // Send request to Mail sender API
+        const result = await response.text(); // Get response text
+        console.log(result); // Log the result
+
+        // Reset form
+        const form = event.target;
+        form.reset();
+
+        // Set message sent state to true
+        setMessageSent(true);
+
+        // Hide message after 3 seconds
+        setTimeout(() => {
+          setMessageSent(false);
+        }, 3000);
+      } catch (error) {
+        console.error(error); // Log any errors
+      }
+    } else {
+      // If name, email, or message fields are not filled, set their border color to red
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+      nameInput.style.borderColor = isNameFilled ? "" : "red";
+      emailInput.style.borderColor = isEmailValid ? "" : "red";
+      messageInput.style.borderColor = isMessageFilled ? "" : "red";
+    }
+  };
+
+  // Function to handle resetting input border color
+  const resetBorder = (event) => {
+    const { id } = event.target;
+    const input = document.getElementById(id);
+    input.style.borderColor = ""; // Reset border color
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-transparent">
@@ -48,18 +154,21 @@ function HomePage(props) {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-8">
+            {messageSent && <div className="message-sent">Message Sent</div>}
             <div className="parent-text-over-image">
               <h1 className="h2 abt-pg-txt text-white">
                 Hey there!
-                <p className="h6">Leave your message here</p>
+                <p className="display-6">Leave your message here</p>
               </h1>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="text"
                     id="name"
                     className="cnt-frm"
                     placeholder="Name"
+                    onChange={handleNameChange} // Add onChange event handler
+                    onFocus={resetBorder} // Add onFocus event handler
                   />
                 </div>
                 <div>
@@ -69,6 +178,8 @@ function HomePage(props) {
                     className="cnt-frm"
                     name="email"
                     placeholder="Email"
+                    onChange={handleEmailChange} // Add onChange event handler
+                    onFocus={resetBorder} // Add onFocus event handler
                   />
                 </div>
                 <div>
@@ -79,6 +190,8 @@ function HomePage(props) {
                     placeholder="Message"
                     rows={6} // Set number of rows
                     cols={50} // Set number of columns
+                    onChange={handleMessageChange} // Add onChange event handler
+                    onFocus={resetBorder} // Add onFocus event handler
                   />
                 </div>
                 <button type="submit" className="sbt-btn">

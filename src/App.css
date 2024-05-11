@@ -31,6 +31,7 @@ a.nav-link {
   font-weight: 300;
   position: relative;
   transition: all 0.3s ease;
+  font-size: 14px;
 }
 
 a.nav-link:hover {
@@ -257,7 +258,7 @@ input.cnt-frm {
   width: 60%;
   border: none;
   border-bottom: 1px solid white;
-  padding: 18px 10px;
+  padding: 26px 10px 5px;
   outline: none;
   color: #c7c7c7;
 }
@@ -298,6 +299,13 @@ textarea#message {
   }
 }
 
+@media (max-width: 720px) {
+  input::placeholder,
+  textarea::placeholder {
+    font-size: small;
+  }
+}
+
 p.cnt-inf {
   font-size: small;
   color: #a5a5a5;
@@ -314,6 +322,16 @@ button.sbt-btn {
   font-weight: 500;
 }
 
-/* form {
-  width: max-content;
-} */
+p.display-6 {
+  font-size: 22px;
+}
+
+@media (max-width: 720px) {
+  button.sbt-btn {
+    font-size: smaller;
+  }
+}
+
+.message-sent {
+  color: #469ba5;
+}
