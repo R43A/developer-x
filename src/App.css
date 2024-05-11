@@ -246,3 +246,74 @@ p.text-small {
     font-size: x-small;
   }
 }
+
+img.my-img {
+  height: 10vh;
+  border-radius: 100px;
+}
+
+input.cnt-frm {
+  background: none;
+  width: 60%;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 18px 10px;
+  outline: none;
+  color: #c7c7c7;
+}
+
+textarea#message {
+  background: none;
+  height: 100px;
+  resize: none;
+  width: 60%;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 10px 7px;
+  color: #c7c7c7;
+  outline: none;
+}
+
+@media (max-width: 720px) {
+  input.cnt-frm {
+    background: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 10px 10px;
+    outline: none;
+    color: #c7c7c7;
+  }
+
+  textarea#message {
+    background: none;
+    height: 90px;
+    resize: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 10px 7px;
+    color: #c7c7c7;
+    outline: none;
+  }
+}
+
+p.cnt-inf {
+  font-size: small;
+  color: #a5a5a5;
+}
+
+button.sbt-btn {
+  background: blue;
+  border: none;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  padding: 4px 16px;
+  color: white;
+  font-weight: 500;
+}
+
+/* form {
+  width: max-content;
+} */

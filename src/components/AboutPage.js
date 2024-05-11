@@ -24,12 +24,12 @@ function HomePage(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/about">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
               </li>
@@ -66,8 +66,8 @@ function HomePage(props) {
                 ability to anticipate and meet the needs of users.
               </p>
               <div className="parent-btn-lnk">
-                <Link to="/" className="maj-lnk">
-                  Browse Projects
+                <Link to="/contact" className="maj-lnk">
+                  Contact me
                 </Link>
               </div>
             </div>
