@@ -257,7 +257,7 @@ input.cnt-frm {
   background: none;
   width: 60%;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid #6f6f6f;
   padding: 26px 10px 5px;
   outline: none;
   color: #c7c7c7;
@@ -269,7 +269,7 @@ textarea#message {
   resize: none;
   width: 60%;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid #6f6f6f;
   padding: 10px 10px;
   color: #c7c7c7;
   outline: none;
@@ -280,7 +280,7 @@ textarea#message {
     background: none;
     width: 100%;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid #6f6f6f;
     padding: 10px 10px;
     outline: none;
     color: #c7c7c7;
@@ -293,7 +293,7 @@ textarea#message {
     resize: none;
     width: 100%;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid #6f6f6f;
     padding: 10px 10px;
     color: #c7c7c7;
     outline: none;
