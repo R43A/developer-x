@@ -336,4 +336,19 @@ p.display-6 {
 
 .message-sent {
   color: #469ba5;
+  position: absolute;
+  top: 0;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media (max-width: 720px) {
+  .message-sent {
+    color: #469ba5;
+    position: absolute;
+    top: -28px;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
 }
