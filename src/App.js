@@ -4,6 +4,8 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
+import ProjectPage from "./components/ProjectPage";
+import ProjectDesc from "./components/ProjectDesc";
 
 function App() {
   return (
@@ -15,6 +17,14 @@ function App() {
           <Route
             path="/contact"
             element={<ContactPage title="developer-X" />}
+          />
+          <Route
+            path="/project"
+            element={<ProjectPage title="developer-X" />}
+          />
+          <Route
+            path="/description"
+            element={<ProjectDesc title="developer-X" />}
           />
         </Routes>
       </Router>

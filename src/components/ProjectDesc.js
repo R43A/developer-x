@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../images/Frame 1.png";
-import background from "../images/Light Desktop.jpg";
+import background from "../images/weather-bg.jpg";
 import { Link } from "react-router-dom";
 import instagram from "../images/instagram.png";
 import github from "../images/github.png";
@@ -48,36 +48,57 @@ function HomePage(props) {
         <div className="row">
           <div className="col-md-8">
             <div className="parent-text-over-image">
-              <h1 className="display-3 text-md-left gradient-text">
-                Frontend Developer
-              </h1>
-              <p className="parent-para text-md">
-                Passionate fresher Frontend Developer with a keen eye for design
-                and a drive to create engaging user experiences. Eager to
-                contribute innovative solutions and learn from experienced peers
-                in the field.
+              <h1 className="Parent-txt text-white">Description</h1>
+              <p className="parent-para text-md text-small">
+                Developed a responsive weather application using React framework
+                to provide users with real-time weather updates based on their
+                current location. Leveraged modern web technologies including
+                HTML5, CSS3, and JavaScript to create an intuitive user
+                interface.
               </p>
+              <ul>
+                <li className="pro-desc">
+                  Implemented geolocation functionality to automatically detect
+                  user's current location and fetch corresponding weather data
+                  using the RapidAPI.
+                </li>
+                <li className="pro-desc">
+                  Designed and styled the application interface using CSS
+                  Flexbox and responsive design principles, ensuring optimal
+                  user experience across various devices.
+                </li>
+                <li className="pro-desc">
+                  Utilized React hooks and state management to efficiently
+                  manage component state and update weather information
+                  dynamically without page refresh.
+                </li>
+                <li className="pro-desc">
+                  Integrated error handling and loading indicators to enhance
+                  user experience during data retrieval processes.
+                </li>
+                <li className="pro-desc">
+                  Conducted rigorous testing across multiple browsers and
+                  devices to ensure cross-compatibility and consistent
+                  functionality.
+                </li>
+              </ul>
               <div className="parent-btn-lnk">
-                <a href="/" className="maj-btn">
-                  Download CV
+                <a href="/" className="maj-lnk">
+                  Visit website
                 </a>
-                <Link to="/about" className="maj-lnk">
-                  Learn More
-                </Link>
               </div>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="parent-text-over-image">
-              <h4 className="text-md">My Projects</h4>
+            <div className="parent-text-over-image abt-pg">
+              <h4 className="text-md">Explore</h4>
               <p className="parent-para text-md">
-                Crafting dynamic frontend projects with HTML, CSS, and
-                JavaScript for engaging user experiences, always seeking new
-                challenges to innovate and grow.
+                Fueled by a relentless pursuit of innovation, always seeking
+                fresh challenges to elevate frontend craftsmanship.
               </p>
-              <Link to="/project" className="maj-lnk">
-                Browse Projects
-              </Link>
+              {/* <Link to="/" className="maj-lnk">
+                Download CV
+              </Link> */}
             </div>
             <div className="social-links">
               <h6 className="text-white">Follow me</h6>

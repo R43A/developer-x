@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "../images/Frame 1.png";
-import background from "../images/Light Desktop.jpg";
+import background from "../images/Project Background.jpg";
 import { Link } from "react-router-dom";
 import instagram from "../images/instagram.png";
 import github from "../images/github.png";
 import linkedin from "../images/linkedin.png";
+import atmosphereX from "../images/Desktop - 1.png";
 
 function HomePage(props) {
   return (
@@ -47,23 +48,24 @@ function HomePage(props) {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-8">
-            <div className="parent-text-over-image">
-              <h1 className="display-3 text-md-left gradient-text">
-                Frontend Developer
-              </h1>
-              <p className="parent-para text-md">
-                Passionate fresher Frontend Developer with a keen eye for design
-                and a drive to create engaging user experiences. Eager to
-                contribute innovative solutions and learn from experienced peers
-                in the field.
-              </p>
-              <div className="parent-btn-lnk">
-                <a href="/" className="maj-btn">
-                  Download CV
-                </a>
-                <Link to="/about" className="maj-lnk">
-                  Learn More
+            <div className="parent-pro-cls">
+              <div className="pro-img-cls">
+                <Link to="/description" className="pro-lnk">
+                  <img
+                    src={atmosphereX}
+                    alt="atmosphere-x"
+                    className="child-pro-img-cls"
+                  />
+                  <p className="pro-p-text">atmosphere-X</p>
                 </Link>
+                {/* <Link to="/" className="pro-lnk">
+                  <img
+                    src={atmosphereX}
+                    alt="atmosphere-x"
+                    className="child-pro-img-cls"
+                  />
+                  <p className="pro-p-text">atmosphere-X</p>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -75,9 +77,9 @@ function HomePage(props) {
                 JavaScript for engaging user experiences, always seeking new
                 challenges to innovate and grow.
               </p>
-              <Link to="/project" className="maj-lnk">
+              {/* <Link to="/" className="maj-lnk">
                 Browse Projects
-              </Link>
+              </Link> */}
             </div>
             <div className="social-links">
               <h6 className="text-white">Follow me</h6>

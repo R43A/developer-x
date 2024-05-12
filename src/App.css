@@ -352,3 +352,47 @@ p.display-6 {
     font-size: 14px;
   }
 }
+
+img.child-pro-img-cls {
+  height: 23vh;
+  object-fit: cover;
+}
+
+a.pro-lnk {
+  text-decoration: none;
+  color: white;
+  font-size: medium;
+  margin-right: 17px;
+}
+
+@media (max-width: 720px) {
+  img.child-pro-img-cls {
+    height: 11vh;
+    object-fit: cover;
+  }
+
+  a.pro-lnk {
+    text-decoration: none;
+    color: white;
+    font-size: small;
+    margin-right: 17px;
+  }
+}
+
+.pro-img-cls {
+  display: flex;
+  flex-direction: row;
+  width: 0;
+}
+
+li.pro-desc {
+  color: #8b8b8b;
+  font-size: small;
+}
+
+@media (max-width: 720px) {
+  li.pro-desc {
+    color: #8b8b8b;
+    font-size: xx-small;
+  }
+}

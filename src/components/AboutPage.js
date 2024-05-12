@@ -19,7 +19,7 @@ function HomePage(props) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/project">
                   Projects
                 </Link>
               </li>
