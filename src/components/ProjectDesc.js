@@ -83,7 +83,7 @@ function HomePage(props) {
                 </li>
               </ul>
               <div className="parent-btn-lnk">
-                <a href="/" className="maj-lnk">
+                <a href="https://atmosphere-x.vercel.app/" className="maj-lnk">
                   Visit website
                 </a>
               </div>
